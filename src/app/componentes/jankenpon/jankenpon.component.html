@@ -1,0 +1,9 @@
+<div *ngIf="!Jugando">
+    <button class="rock btn-success col-md-12"  (click)="nuevaPartida()"><span>Jugar</span></button>
+</div>
+<div *ngIf="Jugando" class="row " style="text-align:center">
+    <button class="rock btn-success col-md-4"  (click)="jugada('piedra')"><span>Rock</span></button>
+    <button class="paper btn-success col-md-4"  (click)="jugada('papel')"><span>Paper</span></button>
+    <button class="scissors btn-success col-md-4" (click)="jugada('tijera')"><span>Scissors</span></button>
+</div>
+<div id="snackbar">{{Mensajes}}</div>

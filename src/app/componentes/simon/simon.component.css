@@ -1,0 +1,154 @@
+.container {
+  width:450px;
+  position:relative;
+  margin:0 auto;
+}
+#simon {
+  position: relative;
+
+}
+#simon #first{
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 224.99999999999997px solid #222222;
+  border-radius: 224.99999999999997px;
+  left: 0px;
+  top: 0px;
+}
+
+/*#1aff00*/
+#simon #a {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 182.14285714285714px solid;
+  border-color:#0b7000;
+  border-bottom: none;
+  border-right: none;
+  border-top-left-radius: 182.14285714285714px;
+  left: 32.14285714285714px;
+  top: 32.14285714285714px;
+}
+#simon #a:active{
+  border-color:#1aff00;
+}
+/*#ff0b00*/
+#simon #b {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 182.14285714285714px solid;
+  border-color: #c30800;
+  border-bottom: none;
+  border-left: none;
+  border-top-right-radius: 182.14285714285714px;
+  left: 235.7142857142857px;
+  top: 32.14285714285714px;
+}
+#simon #b:active{
+  border-color:#ff0b00;
+}
+/*#ffec00*/
+#simon #c {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 182.14285714285714px solid;
+  border-color:#c3b400;
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 182.14285714285714px;
+  left: 32.14285714285714px;
+  top: 235.7142857142857px;
+}
+#simon #c:active{
+  border-color:#ffec00;
+}
+/*#29abd0*/
+#simon #d {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 182.14285714285714px solid;
+  border-color:#196d85;
+  border-top: none;
+  border-left: none;
+  border-bottom-right-radius: 182.14285714285714px;
+  left: 235.7142857142857px;
+  top: 235.7142857142857px;
+}
+#simon #d:active{
+  border-color:#29abd0;
+}
+#simon #sixth {
+  position: absolute;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 53.57142857142857px solid #222222;
+  border-radius: 53.57142857142857px;
+  left: 171.42857142857142px;
+  top: 171.42857142857142px;
+}
+
+
+
+
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar.Ganador {
+  background-color: #059F2F;
+}
+#snackbar.Perdedor {
+  background-color: #FF0000;
+}
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

@@ -1,0 +1,36 @@
+
+
+<div id="snackbar">{{Mensajes}}</div>
+<audio controls class="sound" [hidden]="true">
+  <source id="tune" src="../../../assets/Sonidos/beep1.wav" type="audio/wav">
+</audio>
+<audio controls class="sound" [hidden]="true">
+  <source id="tune" src="../../../assets/Sonidos/BIGBUTN.WAV" type="audio/wav">
+</audio>
+<audio controls class="sound" [hidden]="true">
+  <source id="tune" src="../../../assets/Sonidos/boingShort.wav" type="audio/wav">
+</audio>
+<audio controls class="sound" [hidden]="true">
+  <source id="tune" src="../../../assets/Sonidos/danceBeat.wav" type="audio/wav">
+</audio>
+<audio controls class="sound" [hidden]="true">
+  <source id="tune" src="../../../assets/Sonidos/sm64_mario_game_over.wav" type="audio/wav">
+</audio>
+<audio controls class="sound" [hidden]="true">
+  <source id="tune" src="../../../assets/Sonidos/sm64_mario_yippee.wav" type="audio/wav">
+</audio>
+<div  class="container">
+    <div *ngIf="!Jugando">
+        <button class="rock btn-success col-md-12"  (click)="nuevaPartida()"><span>Jugar</span></button>
+        <input [(ngModel)]="nuevoJuego.contador"  [ngModelOptions]="{standalone: true}" type="number" class="form-control" style="width:50%"/>
+      </div>
+  <div id="simon"  *ngIf="Jugando">
+      <div id="first"></div>
+      <div id="a" (click)="jugada(1)"></div>
+      <div id="b" (click)="jugada(2)" ></div>
+      <div id="c" (click)="jugada(3)"></div>
+      <div id="d" (click)="jugada(4)"></div>
+      <div id="sixth"></div>
+  </div>
+
+</div>
