@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { JuegoPiedraPapelTijera } from 'src/app/clases/juego-piedra-papel-tijera';
+import { JuegoPiedraPapelTijera } from '../../clases/juego-piedra-papel-tijera';
 
 @Component({
   selector: 'app-jankenpon',
