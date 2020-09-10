@@ -26,6 +26,7 @@ export class JuegoSimonDice extends  Juego {
       for(let i=this.contador-1;i>=0;i--){
         this.numeroSecreto[i]=Math.floor((Math.random() * 4) + 1);
       }
+      this.contadorJugada=0;
       console.log(this.numeroSecreto);
     }
     public winGame(){

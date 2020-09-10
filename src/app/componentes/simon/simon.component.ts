@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
-import { JuegoSimonDice } from 'src/app/clases/juego-simon-dice';
+import { JuegoSimonDice } from '../../clases/juego-simon-dice';
 
 @Component({
   selector: 'app-simon',
