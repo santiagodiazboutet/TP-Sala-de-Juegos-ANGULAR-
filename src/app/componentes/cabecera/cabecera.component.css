@@ -1,4 +1,4 @@
-.panel
+/*.panel
 {
     height: 200px;
     background-size: cover;
@@ -32,4 +32,9 @@ cursor: pointer;
 .hero-text a:hover {
 background-color: #555;
 color: white;
+}
+*/
+.p-grid{
+  text-align: center;
+  background-color:var(--surface-a)
 }

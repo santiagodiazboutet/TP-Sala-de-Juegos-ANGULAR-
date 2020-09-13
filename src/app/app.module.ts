@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -11,7 +12,18 @@ import { HttpClientModule } from '@angular/common/http';
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
+//cosas para primeNG
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';                  //api
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/dialog';
+import {TabMenuModule} from 'primeng/tabmenu';  //para menu superior
+import {MenubarModule} from 'primeng/menubar';
 
+
+//servicios importados
 import { MiHttpService } from './servicios/mi-http/mi-http.service';
 import { PaisesService } from './servicios/paises.service';
 
@@ -56,7 +68,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { JankenponComponent } from './componentes/jankenpon/jankenpon.component';
 import { SimonComponent } from './componentes/simon/simon.component';
 import { TaTeTiComponent } from './ta-te-ti/ta-te-ti.component';
-
+import {CardModule} from 'primeng/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,7 +105,17 @@ import { TaTeTiComponent } from './ta-te-ti/ta-te-ti.component';
     HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyATBS5oCpsCJtiVYedr7QsJ5UrnOXuR2dM'
-    })
+    }),
+    //Empiezan imports primeng
+    AccordionModule,
+    InputTextModule,
+    ButtonModule,
+    TableModule,
+    DialogModule,
+    TabMenuModule,
+    BrowserAnimationsModule,
+    MenubarModule,
+    CardModule
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)

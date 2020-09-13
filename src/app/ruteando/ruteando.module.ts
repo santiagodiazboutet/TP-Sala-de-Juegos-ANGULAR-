@@ -23,6 +23,7 @@ import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-goo
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { JankenponComponent } from '../componentes/jankenpon/jankenpon.component';
 import { SimonComponent } from '../componentes/simon/simon.component';
+import { TaTeTiComponent } from '../ta-te-ti/ta-te-ti.component';
 
 
 // declaro donde quiero que se dirija
@@ -46,7 +47,9 @@ children:
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'Jankenpon', component:JankenponComponent},
-      {path: 'Simon', component:SimonComponent}]
+      {path: 'Simon', component:SimonComponent},
+      {path: 'Tateti', component:TaTeTiComponent},
+      ]
 
 },
 {path: '**' , component: ErrorComponent},

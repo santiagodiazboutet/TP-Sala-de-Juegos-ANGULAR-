@@ -1,12 +1,15 @@
-<div class="panel panel-default">
-  <div class="hero-text">
-      <h1 style="font-size:50px">Sala de Juegos</h1>
+<div class="p-grid p-flex-column">
+  <div class="p-col">
+      <h1 style="font-size:50px" >Sala de Juegos</h1>
       <p>Santiago Diaz</p>
+    </div>
+    <div class="p-col">
+      <button pButton label="Quien Soy?"  routerLink="/QuienSoy"></button>
+    </div>
+    <div class=" p-col ">
+    <button pButton label="Ingresar" class="p-m-3"   routerLink="/Login"></button>
+    <button pButton label="Registrarse" class="p-m-3"  routerLink="/Login"></button>
+    </div>
 
-      <a  routerLink="/QuienSoy" >Quien Soy? <i class="fa fa-user"></i></a>
-  </div>
-  <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
-          <li><a  routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
-  </ul>
 </div>
+

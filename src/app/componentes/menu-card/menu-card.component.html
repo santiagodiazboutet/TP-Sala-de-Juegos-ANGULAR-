@@ -1,40 +1,30 @@
-<div class="container" >
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
+<div class="p-grid p-mt-2" >
+<p-card header="Velocidad y agilidad aritmética" subheader="Juego de agilidad mental"  styleClass="p-card-shadow  p-col p-shadow-4 p-m-5">
+    <p-header>
+        <img alt="Card" src="./assets/imagenes/cerebro.jpg">
+    </p-header>
+    <p>UTN FRA</p>
+    <ng-template pTemplate="footer">
+      <button pButton label="Jugar" class=" button "  (click)="Juego('Agilidad')"></button>
+    </ng-template>
+</p-card>
+<p-card header="Piedra Papel o Tijera" subheader="Juega contra la máquina" styleClass="p-card-shadow p-col p-shadow-4 p-m-5" >
+  <p-header>
+      <img alt="Card" src="./assets/imagenes/ppt.jpg">
+  </p-header>
+  <p>UTN FRA</p>
+  <ng-template pTemplate="footer">
+    <button pButton label="Jugar" class=" button "  (click)="Juego('PPT')"></button>
+  </ng-template>
+</p-card>
+<p-card header="Adivina el número secreto" subheader="Juego de estrategia" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
+  <p-header>
+      <img alt="Card" src="./assets/imagenes/adivina.jpg">
+  </p-header>
+  <p>UTN FRA</p>
+  <ng-template pTemplate="footer">
+    <button pButton label="Jugar" class=" button "  (click)="Juego('Adivina')"></button>
+  </ng-template>
+</p-card>
 
-      <a href="#"><i class="fa fa-dribbble"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-
-    </div>
-
-    <div class="card">
-      <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-
-      <a href="#"><i class="fa fa-dribbble"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <p>           <button class="button"  (click)="Juego('PPT')">Jugar</button></p>
-    </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.jpg" alt="Avatar" style="width:100%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-
-      <a href="#"><i class="fa fa-dribbble"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
-    </div>
-  </div>
+</div>

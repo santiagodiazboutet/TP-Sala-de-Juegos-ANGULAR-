@@ -19,6 +19,7 @@ export class SimonComponent implements OnInit {
    }
 
   ngOnInit() {
+    console.log("hola guadi y charly");
   }
   nuevaPartida(){
     this.Jugando=true;
