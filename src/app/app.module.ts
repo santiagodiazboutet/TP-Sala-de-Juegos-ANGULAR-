@@ -67,8 +67,10 @@ import { InputJugadoresComponent } from './componentes/input-jugadores/input-jug
 import { SexoPipe } from './pipes/sexo.pipe';
 import { JankenponComponent } from './componentes/jankenpon/jankenpon.component';
 import { SimonComponent } from './componentes/simon/simon.component';
-import { TaTeTiComponent } from './ta-te-ti/ta-te-ti.component';
+import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 import {CardModule} from 'primeng/card';
+import { CuadradosComponent } from './componentes/ta-te-ti/cuadrados/cuadrados.component';
+import { TableroComponent } from './componentes/ta-te-ti/tablero/tablero.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,7 +98,9 @@ import {CardModule} from 'primeng/card';
     SexoPipe,
     JankenponComponent,
     SimonComponent,
-    TaTeTiComponent
+    TaTeTiComponent,
+    CuadradosComponent,
+    TableroComponent
   ],
   imports: [
     BrowserModule,

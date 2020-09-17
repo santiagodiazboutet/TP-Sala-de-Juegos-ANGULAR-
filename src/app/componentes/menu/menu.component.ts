@@ -46,6 +46,10 @@ export class MenuComponent implements OnInit {
         label: 'TaTeTi',
 
         routerLink:(["/Juegos/Tateti"]),
+      },
+      {
+        label:'Memotest',
+        routerLink:(["/Juegos"])
       }
     ]
     },

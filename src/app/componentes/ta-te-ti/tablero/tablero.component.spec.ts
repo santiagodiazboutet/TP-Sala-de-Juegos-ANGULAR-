@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TaTeTiComponent } from './ta-te-ti.component';
+import { TableroComponent } from './tablero.component';
 
-describe('TaTeTiComponent', () => {
-  let component: TaTeTiComponent;
-  let fixture: ComponentFixture<TaTeTiComponent>;
+describe('TableroComponent', () => {
+  let component: TableroComponent;
+  let fixture: ComponentFixture<TableroComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TaTeTiComponent ]
+      declarations: [ TableroComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TaTeTiComponent);
+    fixture = TestBed.createComponent(TableroComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

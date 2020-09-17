@@ -23,7 +23,7 @@ import { MapaDeGoogleComponent } from '../componentes/mapa-de-google/mapa-de-goo
 import { JugadoresListadoComponent } from '../componentes/jugadores-listado/jugadores-listado.component';
 import { JankenponComponent } from '../componentes/jankenpon/jankenpon.component';
 import { SimonComponent } from '../componentes/simon/simon.component';
-import { TaTeTiComponent } from '../ta-te-ti/ta-te-ti.component';
+import { TaTeTiComponent } from '../componentes/ta-te-ti/ta-te-ti.component';
 
 
 // declaro donde quiero que se dirija
