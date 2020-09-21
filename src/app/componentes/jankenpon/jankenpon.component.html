@@ -1,9 +1,9 @@
 <div *ngIf="!Jugando">
-    <button class="rock btn-success col-md-12"  (click)="nuevaPartida()"><span>Jugar</span></button>
+    <button class="rock btn-success col-md-12"  (click)="nuevaPartida()"><h1>Jugar?</h1></button>
 </div>
 <div *ngIf="Jugando" class="row " style="text-align:center">
-    <button class="rock btn-success col-md-4"  (click)="jugada('piedra')"><span>Rock</span></button>
-    <button class="paper btn-success col-md-4"  (click)="jugada('papel')"><span>Paper</span></button>
-    <button class="scissors btn-success col-md-4" (click)="jugada('tijera')"><span>Scissors</span></button>
+    <button class="rock"  (click)="jugada('piedra')"><span></span></button>
+    <button class="paper"  (click)="jugada('papel')"><span></span></button>
+    <button class="scissors" (click)="jugada('tijera')"><span></span></button>
 </div>
 <div id="snackbar">{{Mensajes}}</div>

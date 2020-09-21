@@ -1,61 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-
+import {JuegoTaTeTi} from '../../../clases/juego-ta-te-ti'
 @Component({
   selector: 'app-tablero',
   templateUrl: './tablero.component.html',
   styleUrls: ['./tablero.component.css']
 })
 export class TableroComponent implements OnInit {
-  squares: string[];
-  xIsNext: boolean;
-  winner: string;
-
-  constructor() {}
+  juego:JuegoTaTeTi;
+  constructor() {
+    this.juego=new JuegoTaTeTi();
+  }
 
   ngOnInit() {
-    this.newGame();
+    this.juego.nuevoJuego();
   }
 
-  newGame() {
-    this.squares = Array(9).fill(null);
-    this.winner = null;
-    this.xIsNext = true;
-  }
+
 
   get player() {
-    return this.xIsNext ? 'X' : 'O';
+    return this.juego.leTocaAX ? 'X' : 'O';
   }
 
-  makeMove(idx: number) {
-    if (!this.squares[idx]) {
-      this.squares.splice(idx, 1, this.player);
-      this.xIsNext = !this.xIsNext;
-    }
-
-    this.winner = this.calculateWinner();
+  hacerMovimiento(idx: number) {
+    this.juego.jugada(idx);
   }
 
-  calculateWinner() {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
-      if (
-        this.squares[a] &&
-        this.squares[a] === this.squares[b] &&
-        this.squares[a] === this.squares[c]
-      ) {
-        return this.squares[a];
-      }
-    }
-    return null;
+  newGame(){
+    this.juego.nuevoJuego();
   }
 }

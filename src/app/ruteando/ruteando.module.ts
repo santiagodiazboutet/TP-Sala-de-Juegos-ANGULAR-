@@ -24,6 +24,7 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 import { JankenponComponent } from '../componentes/jankenpon/jankenpon.component';
 import { SimonComponent } from '../componentes/simon/simon.component';
 import { TaTeTiComponent } from '../componentes/ta-te-ti/ta-te-ti.component';
+import { MemotestComponent } from '../componentes/memotest/memotest.component';
 
 
 // declaro donde quiero que se dirija
@@ -49,6 +50,7 @@ children:
       {path: 'Jankenpon', component:JankenponComponent},
       {path: 'Simon', component:SimonComponent},
       {path: 'Tateti', component:TaTeTiComponent},
+      {path: 'Memotest', component:MemotestComponent}
       ]
 
 },

@@ -1,8 +1,21 @@
+h1{
+  color:#e4e4e4;
+}
+
+button:hover{
+  background-color:#048b29;
+  cursor: pointer;
+}
+button:active{
+  background-color:#047723;
+}
 .rock {
     background-image: url('http://hannahch.com/images/rock.svg');
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+    background-color: #059F2F;
+
     background-size: 50%;
     border:0px;
     border-radius: 50%;
@@ -17,6 +30,8 @@
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
+    background-color: #059F2F;
+
     background-size: 50%;
     border:0px;
     border-radius: 50%;
@@ -32,6 +47,7 @@
     background-position-x: center;
     background-position-y: center;
     background-size: 50%;
+    background-color: #059F2F;
     border:0px;
     border-radius: 50%;
     height:400px;

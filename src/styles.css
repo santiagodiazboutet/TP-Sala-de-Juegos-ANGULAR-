@@ -3,5 +3,5 @@ body{
   color:var(--text-color);
   font-family: var(--font-family);
   font-weight: 400;
-  text-align: justify;
+  text-align: center;
 }

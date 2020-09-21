@@ -1,0 +1,7 @@
+
+  <p-card  styleClass="p-card-shadow p-col  p-m-2" >
+
+        <button pButton class="p-button-outlined p-button-secondary" label=" " *ngIf="!imagen.seleccionada" width="150" height="225"></button>
+        <img alt="Card" *ngIf="imagen.seleccionada"src="{{imagen.imagen}}"width="150" height="225">
+
+  </p-card>

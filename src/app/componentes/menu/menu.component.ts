@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
       },
       {
         label:'Memotest',
-        routerLink:(["/Juegos"])
+        routerLink:(["/Juegos/Memotest"])
       }
     ]
     },

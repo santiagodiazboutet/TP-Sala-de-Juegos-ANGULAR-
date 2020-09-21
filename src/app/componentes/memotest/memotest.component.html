@@ -1,0 +1,20 @@
+
+
+<h1>Jugador actual: {{ this.juego.jugador }} </h1>
+
+<button nbButton outline status="danger" (click)="newGame()">Empezar juego nuevo</button>
+
+
+<h2 *ngIf="this.juego.gano">
+    El jugador {{ this.juego.jugador }} ha ganado el juego despues de {{this.juego.cantidadjugadas}} movimientos!
+</h2>
+
+
+<div class="p-grid p-mt-2" >
+    <app-cuadrados-memo
+        *ngFor="let val of this.juego.cuadrados; let i = index"
+        [imagen]="val"
+        (click)="hacerMovimiento(i)" >
+
+    </app-cuadrados-memo>
+  </div>

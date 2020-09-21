@@ -8,7 +8,10 @@ import { ListadoDeResultadosComponent } from './componentes/listado-de-resultado
 import { LoginComponent } from './componentes/login/login.component';
 //  import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
+//imports para que funcione Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import {firebaseConfig} from '../environments/environment';
 // import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
 import { RouterModule, Routes } from '@angular/router';
@@ -21,7 +24,7 @@ import { TableModule } from 'primeng/table';
 import { DialogModule } from 'primeng/dialog';
 import {TabMenuModule} from 'primeng/tabmenu';  //para menu superior
 import {MenubarModule} from 'primeng/menubar';
-
+import { InputNumberModule} from 'primeng/inputnumber';
 
 //servicios importados
 import { MiHttpService } from './servicios/mi-http/mi-http.service';
@@ -71,6 +74,9 @@ import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 import {CardModule} from 'primeng/card';
 import { CuadradosComponent } from './componentes/ta-te-ti/cuadrados/cuadrados.component';
 import { TableroComponent } from './componentes/ta-te-ti/tablero/tablero.component';
+import { MemotestComponent } from './componentes/memotest/memotest.component';
+import { TableroMemoComponent } from './componentes/memotest/tablero-memo/tablero-memo.component';
+import { CuadradosMemoComponent } from './componentes/memotest/cuadrados-memo/cuadrados-memo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +106,10 @@ import { TableroComponent } from './componentes/ta-te-ti/tablero/tablero.compone
     SimonComponent,
     TaTeTiComponent,
     CuadradosComponent,
-    TableroComponent
+    TableroComponent,
+    MemotestComponent,
+    TableroMemoComponent,
+    CuadradosMemoComponent
   ],
   imports: [
     BrowserModule,
@@ -119,7 +128,11 @@ import { TableroComponent } from './componentes/ta-te-ti/tablero/tablero.compone
     TabMenuModule,
     BrowserAnimationsModule,
     MenubarModule,
-    CardModule
+    CardModule,
+    InputNumberModule,
+    //imports de firebase
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
