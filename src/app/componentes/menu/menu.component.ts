@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import {MenuItem, } from 'primeng/api';
+import { FirebaseService } from 'src/app/servicios/firebase.service';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class MenuComponent implements OnInit {
   items: MenuItem[];
 
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private fireService:FirebaseService) { }
 
   ngOnInit() {
 
@@ -35,13 +37,12 @@ export class MenuComponent implements OnInit {
 
       routerLink:(["/Juegos/Agilidad"]),
       },{
+        label:'Anagrama',
+        routerLink:(["/Juegos/Memotest"])
+      },{
         label: 'Piedra papel o tijeras',
 
       routerLink:(["/Juegos/Jankenpon"]),
-      },{
-        label: 'Simon',
-
-        routerLink:(["/Juegos/Simon"]),
       },{
         label: 'TaTeTi',
 
@@ -50,6 +51,11 @@ export class MenuComponent implements OnInit {
       {
         label:'Memotest',
         routerLink:(["/Juegos/Memotest"])
+      },
+      {
+        label: 'Simon',
+
+        routerLink:(["/Juegos/Simon"]),
       }
     ]
     },
@@ -74,5 +80,7 @@ export class MenuComponent implements OnInit {
         break;
     }
   }
-
+  Logout(){
+    this.fireService.logout();
+  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
+import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { JuegoSimonDice } from '../../clases/juego-simon-dice';
 
 @Component({
@@ -14,12 +15,13 @@ export class SimonComponent implements OnInit {
   Jugando:boolean;
   repetidor:any;
   audio:string="../../../assets/Sonidos/beep1.wav";
-  constructor() {
+  constructor(private fireService:FirebaseService) {
     this.nuevoJuego=new JuegoSimonDice();
    }
 
   ngOnInit() {
-    console.log("hola guadi y charly");
+    this.fireService.getUser().then(val=>this.nuevoJuego.jugador=val.toString());
+
   }
   nuevaPartida(){
     this.Jugando=true;
@@ -38,6 +40,7 @@ export class SimonComponent implements OnInit {
 
       }, 500);
       this.Jugando=false;
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.nuevoJuego.gano, dificultad:this.nuevoJuego.contador},this.nuevoJuego.nombre)
 
       }
 
@@ -47,6 +50,9 @@ export class SimonComponent implements OnInit {
       (<HTMLMediaElement>(document.getElementsByClassName('sound')[4])).play();
       this.MostarMensaje("Ha Perdio",false);
       this.Jugando=false;
+
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.nuevoJuego.gano},this.nuevoJuego.nombre)
+
     }
 
   }
@@ -68,19 +74,24 @@ export class SimonComponent implements OnInit {
           case 1:
             document.getElementById('a').style.borderColor="#1aff00";
             (<HTMLMediaElement>(document.getElementsByClassName('sound')[0])).play();
+            setTimeout(()=> document.getElementById('a').style.borderColor="",750);
+
             break;
           case 2:
               document.getElementById('b').style.borderColor="#ff0b00";
               (<HTMLMediaElement>(document.getElementsByClassName('sound')[1])).play();
+              setTimeout(()=> document.getElementById('b').style.borderColor="",750);
+
             break;
           case 4:
               document.getElementById('d').style.borderColor="#29abd0";
               (<HTMLMediaElement>(document.getElementsByClassName('sound')[3])).play();
+              setTimeout(()=> document.getElementById('d').style.borderColor="",750);
             break;
           case 3:
               document.getElementById('c').style.borderColor="#ffec00";
               (<HTMLMediaElement>(document.getElementsByClassName('sound')[2])).play();
-
+              setTimeout(()=> document.getElementById('c').style.borderColor="",750);
             break;
         }
       }

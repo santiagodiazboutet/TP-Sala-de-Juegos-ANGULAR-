@@ -19,8 +19,11 @@ export class PutgetService {
     }
     //pone un objeto en una coleccion
     put(objeto,coleccion?:string){
-     return this._angularFirestore
-              .collection("imagLindas")
+      this._angularFirestore
+              .collection(coleccion)
+              .add(objeto);
+      this._angularFirestore
+              .collection(objeto.jugador)
               .add(objeto);
     }
 

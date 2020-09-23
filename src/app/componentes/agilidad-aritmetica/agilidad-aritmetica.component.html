@@ -3,37 +3,49 @@
 <!-- index.html -->
 
 
-<form name="juego">
-<ul>
-   <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroSecreto1" placeholder="ingrese numero" [ngModelOptions]="{standalone: true}" type="text" class="form-control" style="width:50%" readonly/>
-  
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.operadorSecreto" placeholder="ingrese numero" [ngModelOptions]="{standalone: true}" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroSecreto2" placeholder="ingrese numero" [ngModelOptions]="{standalone: true}" type="text" class="form-control" style="width:50%" readonly/>
-    
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" [ngModelOptions]="{standalone: true}" type="text" class="form-control" style="width:50%"/>
-     
-   </li>
-  <li [hidden]="ocultarVerificar">
-    <h2  ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li [hidden]="!ocultarVerificar">
-    <h2 ><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  
-    
+<form name="juego" autocomplete="off">
+  <div class="p-field ">
+    <div>
+    <label for="numero1">Primer número:</label>
+  </div>
+    <p-inputNumber inputId="numero1" [(ngModel)]="nuevoJuego.numeroSecreto1" [ngModelOptions]="{standalone: true}" disabled>
+    </p-inputNumber>
 
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-  
-</ul>
+  </div>
+  <div class="p-field ">
+    <div><label for="operador">Operador:</label></div>
+    <input inputId="operador"type="text" pInputText  [(ngModel)]="nuevoJuego.operadorSecreto" [ngModelOptions]="{standalone: true}" disabled>
+
+
+  </div>
+  <div class="p-field ">
+    <div><label for="numero2">Segundo número:</label></div>
+    <p-inputNumber inputId="numero2" [(ngModel)]="nuevoJuego.numeroSecreto2" [ngModelOptions]="{standalone: true}" disabled>
+    </p-inputNumber>
+
+
+  </div>
+  <div class="p-field ">
+    <div><label for="numingresado">Ingrese el resultado aquí:</label></div>
+    <p-inputNumber inputId="numingresado" [(ngModel)]="nuevoJuego.numeroIngresado" [ngModelOptions]="{standalone: true}" >
+    </p-inputNumber>
+
+
+  </div>
+
+
+
+  <div [hidden]="ocultarVerificar">
+    <h2>Tiempo:{{Tiempo}}</h2>
+   <button pButton (click)="verificar()" class="p-button-lg" label="Verificar"></button>
+  </div>
+  <div [hidden]="!ocultarVerificar">
+    <button pButton  (click)="NuevoJuego()"  class="p-button-lg" label="Nuevo"></button>
+  </div>
+
+
+
+
 
 </form>
 <div id="snackbar">{{Mensajes}}</div>

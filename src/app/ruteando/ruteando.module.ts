@@ -25,19 +25,22 @@ import { JankenponComponent } from '../componentes/jankenpon/jankenpon.component
 import { SimonComponent } from '../componentes/simon/simon.component';
 import { TaTeTiComponent } from '../componentes/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from '../componentes/memotest/memotest.component';
+import { LoginGuardGuard } from '../guards/login-guard.guard';
+import { NavegaGuardGuard } from '../guards/navega-guard.guard';
+import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent},
-{path: '' , component: PrincipalComponent},
-{path: 'Login' , component: LoginComponent},
-{path: 'Mapa' , component: MapaDeGoogleComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
-{path: 'Registro' , component: RegistroComponent},
-{path: 'Principal' , component: PrincipalComponent},
-{path: 'Listado' , component: ListadoComponent},
-{path: 'Paises' , component: ListadoDePaisesComponent},
+{path: 'Jugadores' , component: JugadoresListadoComponent, canActivate: [NavegaGuardGuard]},
+{path: '' , component: PrincipalComponent, canActivate: [NavegaGuardGuard]},
+{path: 'Login' , component: LoginComponent, canActivate: [LoginGuardGuard]},
+{path: 'Mapa' , component: MapaDeGoogleComponent, canActivate: [NavegaGuardGuard]},
+{path: 'QuienSoy' , component: QuienSoyComponent, canActivate: [NavegaGuardGuard]},
+{path: 'Registro' , component: RegistroComponent, canActivate: [NavegaGuardGuard]},
+{path: 'Principal' , component: PrincipalComponent, canActivate: [NavegaGuardGuard]},
+{path: 'Listado' , component: ListadoComponent, canActivate: [NavegaGuardGuard]},
+{path: 'Paises' , component: ListadoDePaisesComponent, canActivate: [NavegaGuardGuard]},
 
 { path: 'Juegos' ,
 component: JuegosComponent ,
@@ -50,9 +53,10 @@ children:
       {path: 'Jankenpon', component:JankenponComponent},
       {path: 'Simon', component:SimonComponent},
       {path: 'Tateti', component:TaTeTiComponent},
-      {path: 'Memotest', component:MemotestComponent}
+      {path: 'Memotest', component:MemotestComponent},
+      {path: 'Anagrama', component:AnagramaComponent}
       ]
-
+, canActivate: [NavegaGuardGuard]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

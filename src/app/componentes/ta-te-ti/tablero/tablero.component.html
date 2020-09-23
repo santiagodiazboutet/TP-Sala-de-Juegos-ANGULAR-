@@ -1,6 +1,5 @@
-<h1>Jugador actual: {{ this.juego.jugador }} </h1>
 
-<button nbButton outline status="danger" (click)="newGame()">Empezar juego nuevo</button>
+<button pButton  label="Empezar juego nuevo" (click)="newGame()" ></button>
 
 
 <h2 *ngIf="this.juego.ganador">
@@ -8,11 +7,13 @@
 </h2>
 
 
-<main>
+<main *ngIf="jugando">
+
     <app-cuadrados
         *ngFor="let val of this.juego.cuadrados; let i = index"
         [value]="val"
         (click)="hacerMovimiento(i)">
 
     </app-cuadrados>
+
 </main>

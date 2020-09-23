@@ -1,7 +1,8 @@
 
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { FirebaseService } from 'src/app/servicios/firebase.service';
 import { JuegoAdivina } from '../../clases/juego-adivina'
-
+import { LoginService } from "src/app/servicios/firebase/login.service";
 @Component({
   selector: 'app-adivina-el-numero',
   templateUrl: './adivina-el-numero.component.html',
@@ -14,13 +15,16 @@ export class AdivinaElNumeroComponent implements OnInit {
   Mensajes:string;
   contador:number;
   ultimoNumero:number=0;
-  constructor() {
-    this.nuevoJuego = new JuegoAdivina();
+   foo;
+  constructor(private fireService:FirebaseService) {
+    this.nuevoJuego = new JuegoAdivina(this.foo);
+
   }
   generarnumero() {
     this.nuevoJuego.generarnumero();
     this.contador=0;
-  }
+    this.fireService.getUser().then(val=> this.nuevoJuego.jugador= val.toString());
+   }
   verificar()
   {
     if(this.nuevoJuego.numeroIngresado!=null){
@@ -30,6 +34,9 @@ export class AdivinaElNumeroComponent implements OnInit {
     if (this.nuevoJuego.verificar()){
 
       this.MostarMensaje("Sos un Genio!!!",true);
+      //this.login.retornaremail().then(val=> this.nuevoJuego.jugador= val.toString());
+      console.log(this.nuevoJuego.jugador);
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,cantidadMovimientos:this.nuevoJuego.cantidadJugadas},this.nuevoJuego.nombre)
 
     }else{
 
@@ -62,7 +69,6 @@ export class AdivinaElNumeroComponent implements OnInit {
 
 
     }
-    console.info("numero Secreto:",this.nuevoJuego.gano);
   }
   }
 
@@ -81,6 +87,8 @@ export class AdivinaElNumeroComponent implements OnInit {
 
    }
   ngOnInit() {
+
+
   }
 
 }

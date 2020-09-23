@@ -6,7 +6,7 @@ export class JuegoTaTeTi extends Juego {
   ganador: string;
 
   constructor(nombre?: string, gano?: boolean, jugador?:string) {
-    super("Piedra Papel Tijera",gano,jugador);
+    super("Ta Te Ti",gano,jugador);
   }
 
   public verificar(){
@@ -32,7 +32,11 @@ export class JuegoTaTeTi extends Juego {
         this.cuadrados[a] === this.cuadrados[b] &&
         this.cuadrados[a] === this.cuadrados[c]
       ) {
-        return this.cuadrados[a];
+        if(this.cuadrados[a]=='O'){
+          return "Gano";
+        }else{
+          return "Perdio";
+        }
       }
     }
     for(let i =0;i<=8;i++){

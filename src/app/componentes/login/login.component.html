@@ -21,6 +21,9 @@
     </div>
   </div>
 </div-->
+<h1>Bienvenido a la sala de juegos de Santiago Diaz Boutet</h1>
+<h2>Ingrese su usuario y contraseña para empezar a divertirse</h2>
+
  <div class="container" >
   <div class="jumbotron" style="padding:50px;">
     <form action="return true;">
@@ -29,22 +32,16 @@
       </div>
 
       <div class="container">
-        <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" required>
+        <label><b>Usuario: </b></label>
+        <input pInputText type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" required>
 
-        <label><b>Clave</b></label>
-        <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
-
-        <button *ngIf="logeando"  (click)="Entrar()" >Ingresar</button>
-
-        <input type="checkbox" checked="checked"> Recordar mis datos
+        <label><b>Clave: </b></label>
+        <input pInputText type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
       </div>
+      <button pButton *ngIf="logeando" label="Ingresar" (click)="Entrar()" ></button>
+      <div><input type="checkbox" checked="checked"> Recordar mis datos</div>
 
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancelar</button>
-        <button type="button" class="aceptbtn" routerLink="/Registro" >Registrarse</button>
-        <span class="psw">Te olvidaste <a href="#">la clave?</a></span>
-      </div>
+
 
     </form>
   </div>

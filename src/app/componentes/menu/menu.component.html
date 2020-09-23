@@ -26,5 +26,8 @@
         </ul>
     </div>
   </nav-->
-  <p-menubar [model]="items"></p-menubar>
+  <p-menubar [model]="items">
+    <button pButton label="Cerrar Sesion" pRipple class="p-m-3 p-button-outlined p-button-secondary" (click)="Logout()"></button>
+
+  </p-menubar>
 

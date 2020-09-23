@@ -7,8 +7,7 @@ export abstract class Juego {
     if (nombre)
       this.nombre = nombre;
 
-    if (gano)
-      this.gano = gano;
+
     if(jugador)
       this.jugador=jugador;
     else

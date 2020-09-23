@@ -1,8 +1,7 @@
 
 
-<h1>Jugador actual: {{ this.juego.jugador }} </h1>
 
-<button nbButton outline status="danger" (click)="newGame()">Empezar juego nuevo</button>
+<button pButton label="Empezar juego nuevo"  (click)="newGame()"></button>
 
 
 <h2 *ngIf="this.juego.gano">
@@ -10,7 +9,7 @@
 </h2>
 
 
-<div class="p-grid p-mt-2" >
+<div class="p-grid p-mt-2" *ngIf="jugando" >
     <app-cuadrados-memo
         *ngFor="let val of this.juego.cuadrados; let i = index"
         [imagen]="val"

@@ -1,3 +1,26 @@
-<p>
-  anagrama works!
-</p>
+<form name="juego" autocomplete="off">
+
+  <div [hidden]="ocultarVerificar">
+  <h1>Anagrama</h1>
+    <h2>Palabra: {{this.nuevoJuego.palabraAnagramizada}}</h2>
+  <div class="p-field ">
+    <div><label for="operador">Solucion:</label></div>
+    <input inputId="operador"type="text" pInputText  [(ngModel)]="nuevoJuego.palabraIngresada" [ngModelOptions]="{standalone: true}" >
+
+  </div>
+  </div>
+
+  <div [hidden]="ocultarVerificar">
+    <h2>Intentos restantes: {{3 - this.nuevoJuego.contador}}</h2>
+   <button pButton (click)="verificar()" class="p-button-lg" label="Verificar"></button>
+  </div>
+  <div [hidden]="!ocultarVerificar">
+    <button pButton  (click)="NuevoJuego()"  class="p-button-lg" label="Nuevo"></button>
+  </div>
+
+
+
+
+
+</form>
+<div id="snackbar">{{Mensajes}}</div>

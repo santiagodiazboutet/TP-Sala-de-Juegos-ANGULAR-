@@ -38,7 +38,9 @@ export class MiHttpService {
       .map( ( res: HttpResponse<any> ) => res.body())
       .catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
   }
-
+  public obtenerPaises(url) {
+    return this.http.get(url);
+  }
 
   private extractData ( res: HttpResponse<any> )
   {

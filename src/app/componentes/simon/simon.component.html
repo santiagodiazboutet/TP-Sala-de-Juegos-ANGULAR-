@@ -21,8 +21,15 @@
 </audio>
 <div  class="container">
     <div *ngIf="!Jugando">
-        <button class="rock btn-success col-md-12"  (click)="nuevaPartida()"><span>Jugar</span></button>
-        <input [(ngModel)]="nuevoJuego.contador"  [ngModelOptions]="{standalone: true}" type="number" class="form-control" style="width:50%"/>
+        <button pButton label="Jugar"  (click)="nuevaPartida()"></button>
+        <div>
+          <h3>Dificultad:</h3>
+        </div>
+          <div>
+          <p-inputNumber [(ngModel)]="nuevoJuego.contador" [showButtons]="true" buttonLayout="horizontal" spinnerMode="horizontal"
+    decrementButtonClass="p-button-danger" incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus" decrementButtonIcon="pi pi-minus"  currency="EUR"></p-inputNumber>
+        </div>
+
       </div>
   <div id="simon"  *ngIf="Jugando">
       <div id="first"></div>

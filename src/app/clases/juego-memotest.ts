@@ -11,9 +11,14 @@ export class JuegoMemotest extends Juego{
   }
   nuevoJuego() {
     this.cuadrados=Array(16).fill(null);
+    console.log(this.cuadrados);
     this.jugadaActual=Array(2).fill(17);
+    console.log(this.cuadrados);
+    this.cantidadJugadaActual=0;
+    this.cantidadjugadas=0;
     this.elegirImagenes();
-
+    this.gano=false;
+    this.cantidadAcertadas=0;
   }
 
   elegirImagenes(){
@@ -45,7 +50,7 @@ export class JuegoMemotest extends Juego{
   jugada(index:number){
 
 
-
+    if(!this.cuadrados[index].seleccionada){
     console.log(this.jugadaActual);
     if(this.jugadaActual[0]!=index&&this.jugadaActual[1]!=index){
       if(this.cantidadJugadaActual==2){
@@ -77,6 +82,7 @@ export class JuegoMemotest extends Juego{
     console.log(this.cantidadAcertadas);
     this.cantidadjugadas++;
     this.gano=this.verificar();
+    }
   }
 
 

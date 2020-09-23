@@ -77,6 +77,13 @@ import { TableroComponent } from './componentes/ta-te-ti/tablero/tablero.compone
 import { MemotestComponent } from './componentes/memotest/memotest.component';
 import { TableroMemoComponent } from './componentes/memotest/tablero-memo/tablero-memo.component';
 import { CuadradosMemoComponent } from './componentes/memotest/cuadrados-memo/cuadrados-memo.component';
+import { FirebaseService } from './servicios/firebase.service';
+import { LoginService } from './servicios/firebase/login.service';
+import { RegistroService } from './servicios/firebase/registro.service';
+import { PutgetService } from './servicios/firebase/putget.service';
+import { NavegaGuardGuard } from "./guards/navega-guard.guard";
+import { LoginGuardGuard } from "./guards/login-guard.guard";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -137,7 +144,17 @@ import { CuadradosMemoComponent } from './componentes/memotest/cuadrados-memo/cu
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ JuegoServiceService,
+               MiHttpService,
+               PaisesService,
+               ArchivosJugadoresService,
+               JugadoresService,
+               FirebaseService,
+               LoginService,
+               RegistroService,
+               PutgetService,
+               LoginGuardGuard,
+               NavegaGuardGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

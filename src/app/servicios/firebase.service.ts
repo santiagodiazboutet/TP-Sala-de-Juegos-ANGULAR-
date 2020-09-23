@@ -34,5 +34,13 @@ export class FirebaseService {
     this.putget.put(objeto,coleccion);
   }
 
+   async getUser(){
 
+
+    return await this.login.retornaremail();
+
+  }
+  logout(){
+    this.login.logOut();
+  }
 }
