@@ -1,30 +1,88 @@
 <div class="p-grid p-mt-2" >
-<p-card header="Velocidad y agilidad aritmética" subheader="Juego de agilidad mental"  styleClass="p-card-shadow  p-col p-shadow-4 p-m-5">
+  <div class="p-col-3">
+  <p-card header="Agilidad aritmética" subheader="Juego de agilidad mental"  styleClass="p-card-shadow  p-col p-shadow-4 p-m-5">
+      <p-header>
+          <img alt="Card" src="./assets/imagenes/cerebro.jpg">
+      </p-header>
+      <p>UTN FRA</p>
+      <ng-template pTemplate="footer">
+        <button pButton label="Jugar" class=" button "  (click)="Juego('Agilidad')"></button>
+      </ng-template>
+  </p-card>
+</div>
+<div class="p-col-3">
+  <p-card header="Piedra Papel o Tijera" subheader="Juega contra la máquina" styleClass="p-card-shadow p-col
+   p-shadow-4 p-m-5" >
     <p-header>
-        <img alt="Card" src="./assets/imagenes/cerebro.jpg">
+        <img alt="Card" src="./assets/imagenes/ppt.jpg">
     </p-header>
     <p>UTN FRA</p>
     <ng-template pTemplate="footer">
-      <button pButton label="Jugar" class=" button "  (click)="Juego('Agilidad')"></button>
+      <button pButton label="Jugar" class=" button "  (click)="Juego('Jankenpon')"></button>
     </ng-template>
-</p-card>
-<p-card header="Piedra Papel o Tijera" subheader="Juega contra la máquina" styleClass="p-card-shadow p-col p-shadow-4 p-m-5" >
-  <p-header>
-      <img alt="Card" src="./assets/imagenes/ppt.jpg">
-  </p-header>
-  <p>UTN FRA</p>
-  <ng-template pTemplate="footer">
-    <button pButton label="Jugar" class=" button "  (click)="Juego('PPT')"></button>
-  </ng-template>
-</p-card>
-<p-card header="Adivina el número secreto" subheader="Juego de estrategia" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
-  <p-header>
-      <img alt="Card" src="./assets/imagenes/adivina.jpg">
-  </p-header>
-  <p>UTN FRA</p>
-  <ng-template pTemplate="footer">
-    <button pButton label="Jugar" class=" button "  (click)="Juego('Adivina')"></button>
-  </ng-template>
-</p-card>
+  </p-card>
+</div>
+<div class="p-col-3">
+
+  <p-card header="Adivina el número secreto" subheader="Juego de estrategia" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
+    <p-header>
+        <img alt="Card" src="./assets/imagenes/adivina.jpg">
+    </p-header>
+    <p>UTN FRA</p>
+    <ng-template pTemplate="footer">
+      <button pButton label="Jugar" class=" button "  (click)="Juego('Adivina')"></button>
+    </ng-template>
+  </p-card>
+</div>
+  <div class="p-col-3">
+
+  <p-card header="Ta Te Ti" subheader="Realiza una linea de tres" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
+    <p-header>
+        <img alt="Card" src="./assets/imagenes/Tateti.png">
+    </p-header>
+    <p>UTN FRA</p>
+    <ng-template pTemplate="footer">
+      <button pButton label="Jugar" class=" button "  (click)="Juego('Tateti')"></button>
+    </ng-template>
+  </p-card>
+  </div>
+  <div class="p-col-3">
+
+  <p-card header="Memotest" subheader="Ejercita la memoria" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
+    <p-header>
+        <img alt="Card" src="./assets/imagenes/Memotest.jpg">
+    </p-header>
+    <p>UTN FRA</p>
+    <ng-template pTemplate="footer">
+      <button pButton label="Jugar" class=" button "  (click)="Juego('Memotest')"></button>
+    </ng-template>
+  </p-card>
+  </div>
+  <div class="p-col-3">
+
+    <p-card header="Anagrama" subheader="Reordena los nombres de los paises" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
+      <p-header>
+          <img alt="Card" src="./assets/imagenes/Anagrama.jpg">
+      </p-header>
+      <p>UTN FRA</p>
+      <ng-template pTemplate="footer">
+        <button pButton label="Jugar" class=" button "  (click)="Juego('Anagrama')"></button>
+      </ng-template>
+    </p-card>
+    </div>
+  <div class="p-col-3">
+
+  <p-card header="Simon" subheader="Intenta repetir los patrones" styleClass="p-card-shadow p-col p-shadow-4 p-m-5">
+    <p-header>
+        <img alt="Card" src="./assets/imagenes/Simon.jpeg">
+    </p-header>
+    <p>UTN FRA</p>
+    <ng-template pTemplate="footer">
+      <button pButton label="Jugar" class=" button "  (click)="Juego('Simon')"></button>
+    </ng-template>
+  </p-card>
+  </div>
+
+
 
 </div>

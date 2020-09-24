@@ -45,4 +45,17 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  EntrarComo(user:String) {
+
+    this.fireService.loginUser(user.toString(),"123456")
+    .then((authData)=>{
+      this.router.navigateByUrl('');
+    })
+
+    .catch((authError)=>{
+      alert("Auth error => "+authError);
+      console.log("Auth error => ",authError);
+    });
+  }
+
 }
