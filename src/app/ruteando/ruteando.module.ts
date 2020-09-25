@@ -34,7 +34,7 @@ import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 const MiRuteo = [
 {path: 'Jugadores' , component: JugadoresListadoComponent, canActivate: [NavegaGuardGuard]},
 {path: '' , component: PrincipalComponent, canActivate: [NavegaGuardGuard]},
-{path: 'Login' , component: LoginComponent, canActivate: [LoginGuardGuard]},
+{path: 'Login' , component: LoginComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent, canActivate: [NavegaGuardGuard]},
 {path: 'QuienSoy' , component: QuienSoyComponent, canActivate: [NavegaGuardGuard]},
 {path: 'Registro' , component: RegistroComponent, canActivate: [NavegaGuardGuard]},

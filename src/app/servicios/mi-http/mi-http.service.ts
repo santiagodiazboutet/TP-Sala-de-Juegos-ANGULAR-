@@ -4,8 +4,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpResponse } from '@angular/common/http';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -32,12 +30,7 @@ export class MiHttpService {
     });
   }
 
-  public httpGetO ( url: string): Observable<HttpResponse<any>>
-  {
-    return this.http.get( url )
-      .map( ( res: HttpResponse<any> ) => res.body())
-      .catch( ( err: any ) => Observable.throw(err.json().error || 'Server error'));
-  }
+
   public obtenerPaises(url) {
     return this.http.get(url);
   }
