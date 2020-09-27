@@ -12,6 +12,7 @@ export class AnagramaComponent implements OnInit {
   nuevoJuego : JuegoAnagrama;
   ocultarVerificar: boolean=true;
   Tiempo: number;
+  time=new Date();
   Mensajes:string;
   foo;
   constructor(private httpservice:MiHttpService,private fireService:FirebaseService) {
@@ -36,7 +37,7 @@ export class AnagramaComponent implements OnInit {
 
       this.MostarMensaje("Ganaste!",true);
       //this.login.retornaremail().then(val=> this.nuevoJuego.jugador= val.toString());
-      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:'Gano',cantidadIntentos:this.nuevoJuego.contador},this.nuevoJuego.nombre)
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:'Gano',cantidadMovimientos:this.nuevoJuego.contador,date:this.time.getTime()},this.nuevoJuego.nombre)
       this.ocultarVerificar=true;
 
 
@@ -50,7 +51,7 @@ export class AnagramaComponent implements OnInit {
 
           break;
         case 3:
-          this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:'Perdio',cantidadIntentos:this.nuevoJuego.contador},this.nuevoJuego.nombre);
+          this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:'Perdio',cantidadMovimientos:this.nuevoJuego.contador,date:this.time.getTime()},this.nuevoJuego.nombre);
           this.MostarMensaje("Perdiste. El pais buscado era: "+ this.nuevoJuego.palabra.name);
           this.ocultarVerificar=true;
           break;

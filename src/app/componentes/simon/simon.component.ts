@@ -13,6 +13,7 @@ export class SimonComponent implements OnInit {
   ocultarVerificar: boolean;
   Mensajes:string;
   Jugando:boolean;
+  time=new Date();
   repetidor:any;
   audio:string="../../../assets/Sonidos/beep1.wav";
   constructor(private fireService:FirebaseService) {
@@ -40,7 +41,7 @@ export class SimonComponent implements OnInit {
 
       }, 500);
       this.Jugando=false;
-      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.nuevoJuego.gano, dificultad:this.nuevoJuego.contador},this.nuevoJuego.nombre)
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador, gano:"Gano", cantidadMovimientos:this.nuevoJuego.contador,date:this.time.getTime()},this.nuevoJuego.nombre);
 
       }
 
@@ -51,7 +52,7 @@ export class SimonComponent implements OnInit {
       this.MostarMensaje("Ha Perdio",false);
       this.Jugando=false;
 
-      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.nuevoJuego.gano},this.nuevoJuego.nombre)
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:"Perdio", cantidadMovimientos:this.nuevoJuego.contador},this.nuevoJuego.nombre)
 
     }
 

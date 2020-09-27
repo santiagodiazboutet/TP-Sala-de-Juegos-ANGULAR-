@@ -25,7 +25,9 @@ import { DialogModule } from 'primeng/dialog';
 import {TabMenuModule} from 'primeng/tabmenu';  //para menu superior
 import {MenubarModule} from 'primeng/menubar';
 import { InputNumberModule} from 'primeng/inputnumber';
-
+import {TreeTableModule} from 'primeng/treetable';
+import {SelectButtonModule} from 'primeng/selectbutton';
+import {TreeNode} from 'primeng/api';
 //servicios importados
 import { MiHttpService } from './servicios/mi-http/mi-http.service';
 import { PaisesService } from './servicios/paises.service';
@@ -137,6 +139,8 @@ import { LoginGuardGuard } from "./guards/login-guard.guard";
     MenubarModule,
     CardModule,
     InputNumberModule,
+    TreeTableModule,
+    SelectButtonModule,
     //imports de firebase
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,

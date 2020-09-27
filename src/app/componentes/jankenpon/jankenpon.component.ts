@@ -14,6 +14,7 @@ export class JankenponComponent implements OnInit {
   Mensajes:string;
   Jugando:boolean;
   resultado:String;
+  time=new Date();
   constructor(private fireService:FirebaseService) {
     this.nuevoJuego=new JuegoPiedraPapelTijera();
     this.Jugando=false;
@@ -41,7 +42,7 @@ export class JankenponComponent implements OnInit {
     }
     console.log(this.nuevoJuego.jugador);
     console.log(this.nuevoJuego.nombre);
-    this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.resultado},this.nuevoJuego.nombre)
+    this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.resultado,date:this.time.getTime()},this.nuevoJuego.nombre)
     this.Jugando=false;
   }
   nuevaPartida(){

@@ -32,7 +32,7 @@ import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent, canActivate: [NavegaGuardGuard]},
+{path: 'JugadorListado' , component: JugadoresListadoComponent, canActivate: [NavegaGuardGuard]},
 {path: '' , component: PrincipalComponent, canActivate: [NavegaGuardGuard]},
 {path: 'Login' , component: LoginComponent},
 {path: 'Mapa' , component: MapaDeGoogleComponent, canActivate: [NavegaGuardGuard]},
@@ -58,7 +58,7 @@ children:
       ]
 , canActivate: [NavegaGuardGuard]
 },
-{path: '**' , component: ErrorComponent},
+{path: '**' , component: PrincipalComponent, canActivate:[NavegaGuardGuard]},
 {path: 'error' , component: ErrorComponent}];
 
 @NgModule({

@@ -1,29 +1,26 @@
-<ul class="nav nav-pills nav-justified">
-  <li class="active"><a routerLink="/Principal">Ir a inicio</a></li>
-  <li><a (click)="TraerTodos()">Todos los jugadores</a></li>
-  <li><a (click)="TraerGanadores()">Los ganadores</a></li>
-  <li><a (click)="TraerPerdedores()">Los perdedores</a></li>
-</ul>
+<app-menu></app-menu>
+<!-- Centered Pills -->
+<h1>Historial jugador</h1>
+<div class="card  p-m-5">
+<p-table [value]="files" class="p-mt-5" class="p-mt-2 p-mb-2">
+  <ng-template pTemplate="header">
+      <tr>
+          <th>Jugador</th>
+          <th>Juego</th>
+          <th>Resultado</th>
+          <th *ngIf="mostrarMovimientos">Cantidad Movimientos</th>
 
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+      <tr>
+          <td>{{car.jugador}}</td>
+          <td>{{car.juego}}</td>
+          <td>{{car.gano}}</td>
+          <td *ngIf="mostrarMovimientos">{{car.cantidadMovimientos}}</td>
 
+      </tr>
+  </ng-template>
+</p-table>
 
-<table class="table table-condensed">
-  <thead>
-    <tr>
-      <th>usuario</th>
-      <th>cuit</th>
-      <th>sexo</th>
-      <th>gano</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let jugador of listado" >
-      <td>{{jugador.usuario}} </td>
-      <td>{{jugador.cuit}} </td> 
-      <td>{{jugador.sexo | sexo| uppercase}} </td> 
-      <td>{{jugador.gano}} </td> 
-      
-    </tr>
-   
-  </tbody>
-</table>
+<div class="card"></div>

@@ -33,9 +33,9 @@ export class JuegoTaTeTi extends Juego {
         this.cuadrados[a] === this.cuadrados[c]
       ) {
         if(this.cuadrados[a]=='O'){
-          return "Gano";
-        }else{
           return "Perdio";
+        }else{
+          return "Gano";
         }
       }
     }
@@ -46,7 +46,7 @@ export class JuegoTaTeTi extends Juego {
       }
     }
     if(empate==true){
-      return 'empate';
+      return 'Empate';
     }
     return null;
   }

@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit {
       routerLink:(["/Juegos/Agilidad"]),
       },{
         label:'Anagrama',
-        routerLink:(["/Juegos/Memotest"])
+        routerLink:(["/Juegos/Anagrama"])
       },{
         label: 'Piedra papel o tijeras',
 
@@ -57,8 +57,16 @@ export class MenuComponent implements OnInit {
 
         routerLink:(["/Juegos/Simon"]),
       }
-    ]
+    ]},
+    {
+      label:"Listado",
+      routerLink:(["/Listado"]),
     },
+    {
+      label:"Listado Jugador",
+      routerLink:(["/JugadorListado"]),
+    }
+
     ];
     this.items[0].styleClass="button";
     console.log(this.items[0].styleClass);

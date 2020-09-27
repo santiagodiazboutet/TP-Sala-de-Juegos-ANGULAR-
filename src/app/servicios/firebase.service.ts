@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { analytics } from 'firebase';
 import { LoginService } from "./firebase/login.service";
 import { PutgetService } from "./firebase/putget.service";
 import { RegistroService } from "./firebase/registro.service";
@@ -20,12 +21,22 @@ export class FirebaseService {
   loginUser(email: string, password: string){
     return this.login.login(email,password);
   }
-
-  getColeccion(tipo:string,parametro?:string,queBusca?:string){
+  getColeccionUser(tipo:string){
+    return this.putget.getUsersCol(tipo);
+  }
+  getColeccion(tipo:string,coleccion?:string,parametro?:string,queBusca?:string){
     if(parametro){
       return this.putget.where(tipo,queBusca,parametro);
     }else{
-      return this.putget.get(tipo);
+      console.log("llega aca");
+
+
+
+      if (tipo=="todos"){
+        return this.putget.getTodos()
+      }
+      else{
+        return this.putget.get(coleccion);}
     }
 
   }

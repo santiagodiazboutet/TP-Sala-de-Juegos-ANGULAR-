@@ -9,6 +9,7 @@ import {JuegoMemotest} from '../../clases/juego-memotest'
 export class MemotestComponent implements OnInit {
   juego:JuegoMemotest;
   jugando:boolean=false;
+  time=new Date();
   constructor(private fireService:FirebaseService) {
     this.juego=new JuegoMemotest();
   }
@@ -25,7 +26,7 @@ export class MemotestComponent implements OnInit {
     if(this.juego.gano){
       let val ={juego:this.juego.nombre,jugador:this.juego.jugador,gano:this.juego.gano? "Gano" : "Perdio"};
       console.info(val);
-    this.fireService.putDatos({juego:this.juego.nombre,jugador:this.juego.jugador,gano:this.juego.gano? "Gano" : "Perdio", cantidadMovimientos:this.juego.cantidadjugadas},this.juego.nombre);
+    this.fireService.putDatos({juego:this.juego.nombre,jugador:this.juego.jugador,gano:this.juego.gano? "Gano" : "Perdio", cantidadMovimientos:this.juego.cantidadjugadas,date:this.time.getTime()},this.juego.nombre);
     }
   }
 

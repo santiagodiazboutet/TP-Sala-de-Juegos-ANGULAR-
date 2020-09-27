@@ -9,6 +9,7 @@ import {JuegoTaTeTi} from '../../../clases/juego-ta-te-ti'
 export class TableroComponent implements OnInit {
   juego:JuegoTaTeTi;
   jugando:boolean=false;
+  time=new Date();
   constructor(private fireService:FirebaseService) {
     this.juego=new JuegoTaTeTi();
   }
@@ -26,7 +27,7 @@ export class TableroComponent implements OnInit {
   hacerMovimiento(idx: number) {
     this.juego.jugada(idx);
     if(this.juego.ganador){
-    this.fireService.putDatos({juego:this.juego.nombre,jugador:this.juego.jugador,gano:this.juego.ganador},this.juego.nombre);
+    this.fireService.putDatos({juego:this.juego.nombre,jugador:this.juego.jugador,gano:this.juego.ganador,date:this.time.getTime()},this.juego.nombre);
     }
   }
 

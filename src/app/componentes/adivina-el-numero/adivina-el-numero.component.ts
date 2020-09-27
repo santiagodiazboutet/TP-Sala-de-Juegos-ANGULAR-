@@ -10,7 +10,7 @@ import { LoginService } from "src/app/servicios/firebase/login.service";
 })
 export class AdivinaElNumeroComponent implements OnInit {
  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();
-
+  time = new Date();
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
   contador:number;
@@ -36,7 +36,7 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.MostarMensaje("Sos un Genio!!!",true);
       //this.login.retornaremail().then(val=> this.nuevoJuego.jugador= val.toString());
       console.log(this.nuevoJuego.jugador);
-      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,cantidadMovimientos:this.nuevoJuego.cantidadJugadas},this.nuevoJuego.nombre)
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:"Gano",cantidadMovimientos:this.nuevoJuego.cantidadJugadas,date:this.time.getTime},this.nuevoJuego.nombre)
 
     }else{
 

@@ -12,6 +12,7 @@ import { FirebaseService } from 'src/app/servicios/firebase.service';
 export class AgilidadAritmeticaComponent implements OnInit {
    @Output()
   enviarJuego :EventEmitter<any>= new EventEmitter<any>();
+  time=new Date();
   nuevoJuego : JuegoAgilidad;
   ocultarVerificar: boolean;
   Tiempo: number;
@@ -60,7 +61,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
       this.MostarMensaje("Perdiste. El numero buscado era: "+ this.nuevoJuego.resultado.toString());
 
     }
-    this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.nuevoJuego.gano? 'Gano' : 'Perdio'},this.nuevoJuego.nombre)
+    this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:this.nuevoJuego.gano? 'Gano' : 'Perdio',date:this.time.getTime()},this.nuevoJuego.nombre)
     //setTimeout(document.getElementById("snackbar").className=" ",3000);
   }
 
