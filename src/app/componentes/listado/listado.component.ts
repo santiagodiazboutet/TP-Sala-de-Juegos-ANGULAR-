@@ -17,8 +17,8 @@ export class ListadoComponent implements OnInit {
   constructor(private fireService:FirebaseService) {
     this.options = [{label: 'Todos', value: 'Todos'}
                     ,{label: 'Anagrama', value: 'Anagrama'}
-                    ,{label: 'Agilidad Aritmetica', value: 'Agilidad Aritmetica'}
-                    ,{label: 'Adivina el numero', value: 'Adivina el numero'}
+                    ,{label: 'Agilidad aritmetica', value: 'Agilidad aritmetica'}
+                    ,{label: 'Adivina el número', value: 'Adivina el número'}
                     ,{label: 'Piedra Papel o Tijera', value: 'Piedra Papel Tijera'}
                     ,{label: 'Memotest', value: 'Memotest'}
                     ,{label: 'Simon dice', value: 'Simon dice'}

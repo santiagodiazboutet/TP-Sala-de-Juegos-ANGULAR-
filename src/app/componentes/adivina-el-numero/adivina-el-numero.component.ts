@@ -36,7 +36,7 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.MostarMensaje("Sos un Genio!!!",true);
       //this.login.retornaremail().then(val=> this.nuevoJuego.jugador= val.toString());
       console.log(this.nuevoJuego.jugador);
-      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:"Gano",cantidadMovimientos:this.nuevoJuego.cantidadJugadas,date:this.time.getTime},this.nuevoJuego.nombre)
+      this.fireService.putDatos({juego:this.nuevoJuego.nombre,jugador:this.nuevoJuego.jugador,gano:"Gano",cantidadMovimientos:this.nuevoJuego.cantidadJugadas,date:this.time.getTime()},this.nuevoJuego.nombre)
 
     }else{
 
