@@ -5,14 +5,15 @@
 
 <app-menu></app-menu>
 <!-- Centered Pills -->
-<h1>Hitorial de juegos</h1>
+<h1>Historial de juegos</h1>
 
 <div class="card p-m-5">
 <p-selectButton class="p-mt-5"[options]="options" [(ngModel)]="value1" (onChange)="cambioLista($event)"></p-selectButton>
 
 </div>
 <div class="card">
-<p-table [value]="files" class="p-mt-5" class="p-mt-2 p-mb-2">
+<p-table [value]="files" class="p-mt-5" class="p-mt-2 p-mb-2" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+currentPageReportTemplate="Mostrando {first} a {last}. Total {totalRecords} entradas" [rowsPerPageOptions]="[10,25,50]">
   <ng-template pTemplate="header">
       <tr>
           <th>Jugador</th>

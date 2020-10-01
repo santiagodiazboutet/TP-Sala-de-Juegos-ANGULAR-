@@ -2,7 +2,8 @@
 <!-- Centered Pills -->
 <h1>Historial jugador</h1>
 <div class="card  p-m-5">
-<p-table [value]="files" class="p-mt-5" class="p-mt-2 p-mb-2">
+<p-table [value]="files" class="p-mt-5" class="p-mt-2 p-mb-2"[paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+currentPageReportTemplate="Mostrando {first} a {last}. Total {totalRecords} entradas" [rowsPerPageOptions]="[10,25,50]">
   <ng-template pTemplate="header">
       <tr>
           <th>Jugador</th>
